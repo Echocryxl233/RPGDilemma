@@ -40,16 +40,6 @@ ADilemmaCharacter::ADilemmaCharacter()
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 }
 
-//void ADilemmaCharacter::PossessedBy(AController* NewController)
-//{
-//	Super::PossessedBy(NewController);
-//
-//	AddGameplayAbilities();
-//	InitDefaultAttributes();
-//}
-
-
-
 void ADilemmaCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	// Set up gameplay key bindings

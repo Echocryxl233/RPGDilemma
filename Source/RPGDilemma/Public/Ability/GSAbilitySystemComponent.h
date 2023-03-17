@@ -17,9 +17,9 @@ class RPGDILEMMA_API UGSAbilitySystemComponent : public UAbilitySystemComponent
 public:
 	virtual void InitializeComponent() override;
 
-private:
-	UPROPERTY()
-	class UDilemmaAttributeSet* AttributeSetBase;
+//private:
+//	UPROPERTY()
+//	class UDilemmaAttributeSet* AttributeSetBase;
 
 
 };

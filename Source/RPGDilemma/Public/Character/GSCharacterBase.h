@@ -32,26 +32,6 @@ protected:
 
 	virtual void InitDefaultAttributes();
 
-public:
-
-	/** Returns the value of Attribute from the ability system component belonging to Actor. */
-	//UFUNCTION(BlueprintPure, Category = "Ability|Attribute")
-	//static float GetFloatAttribute(const AActor* Actor, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute);
-
-	/** Returns the value of Attribute from the ability system component AbilitySystem. */
-	//UFUNCTION(BlueprintCallable, Category = "Dilemma|Attribute")
-	//static float GetFloatAttributeFromAbilitySystemComponent(const UAbilitySystemComponent* AbilitySystem, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute);
-
-	/** Returns the base value of Attribute from the ability system component belonging to Actor. */
-	//UFUNCTION(BlueprintPure, Category = "Ability|Attribute")
-	//static float GetFloatAttributeBase(const AActor* Actor, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute);
-
-	/** Returns the base value of Attribute from the ability system component AbilitySystemComponent. */
-	//UFUNCTION(BlueprintCallable, Category = "Dilemma|Attribute")
-	//static float GetFloatAttributeBaseFromAbilitySystemComponent(const UAbilitySystemComponent* AbilitySystemComponent, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute);
-
-	
-
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

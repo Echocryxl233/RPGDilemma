@@ -13,22 +13,4 @@ ADelimmaPlayerState::ADelimmaPlayerState()
 	
 }
 
-//UAbilitySystemComponent* ADelimmaPlayerState::GetAbilitySystemComponent() const
-//{
-//	return AbilitySystemComponent;
-//}
-//
-//UDilemmaAttributeSet* ADelimmaPlayerState::GetAttributeSetBase() const
-//{
-//	return DilemmaAttributeSet;
-//}
-
-//void ADelimmaPlayerState::K2_InitAbilityActorInfo(AActor* InOwner, AActor* InAvatar)
-//{
-//	if (IsValid(AbilitySystemComponent))
-//	{
-//		GetAbilitySystemComponent()->InitAbilityActorInfo(InOwner, InAvatar);
-//	}
-//}
-//
 

@@ -18,23 +18,7 @@ class RPGDILEMMA_API ADelimmaPlayerState : public APlayerState //, public IAbili
 public:
 	ADelimmaPlayerState();
 
-	//virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-
-	//class UDilemmaAttributeSet* GetAttributeSetBase() const;
 
 protected:
-
-	//UFUNCTION(BlueprintCallable)
-	//void K2_InitAbilityActorInfo(AActor* InOwner, AActor* InAvatar);
-
-//protected:
-//
-//	UPROPERTY()
-//	class UGSAbilitySystemComponent* AbilitySystemComponent;
-//
-//	UPROPERTY()
-//	class UDilemmaAttributeSet* DilemmaAttributeSet;
-
-
 	
 };

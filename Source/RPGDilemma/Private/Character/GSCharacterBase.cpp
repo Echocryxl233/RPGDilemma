@@ -21,34 +21,23 @@ ADilemmaCharacterBase::ADilemmaCharacterBase()
 	// set our turn rate for input
 	TurnRateGamepad = 50.f;
 
-	// Don't rotate when the controller rotates. Let that just affect the camera.
-
-
-	//// Configure character movement
-	//GetCharacterMovement()->bOrientRotationToMovement = true; // Character moves in the direction of input...	
-	//GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f); // ...at this rotation rate
-
-	//// Note: For faster iteration times these variables, and many more, can be tweaked in the Character Blueprint
-	//// instead of recompiling to adjust them
-	//GetCharacterMovement()->JumpZVelocity = 700.f;
-	//GetCharacterMovement()->AirControl = 0.35f;
-	//GetCharacterMovement()->MaxWalkSpeed = 500.f;
-	//GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
-	//GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
-
 	AbilitySystemComponent = CreateDefaultSubobject<UGSAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
 	AbilitySystemComponent->SetIsReplicated(true);
 
 	AttributeSetBase = CreateDefaultSubobject<UDilemmaAttributeSet>(TEXT("AttributeSetBase"));
-
 }
 
 void ADilemmaCharacterBase::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
 
-	AddGameplayAbilities();
-	InitDefaultAttributes();
+	if (AbilitySystemComponent)
+	{
+		AbilitySystemComponent->InitAbilityActorInfo(this, this);
+		AddGameplayAbilities();
+		InitDefaultAttributes();
+	}
+	
 }
 
 // Called when the game starts or when spawned
@@ -116,45 +105,3 @@ void ADilemmaCharacterBase::InitDefaultAttributes()
 	}
 }
 
-
-//float AGSCharacterBase::GetFloatAttribute(const  AActor* Actor, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute)
-//{
-//	const UAbilitySystemComponent* const AbilitySystem = UAbilitySystemGlobals::GetAbilitySystemComponentFromActor(Actor);
-//
-//	return GetFloatAttributeFromAbilitySystemComponent(AbilitySystem, Attribute, bSuccessfullyFoundAttribute);
-//}
-
-//float ADilemmaCharacterBase::GetFloatAttributeFromAbilitySystemComponent(const  UAbilitySystemComponent* AbilitySystem, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute)
-//{
-//	bSuccessfullyFoundAttribute = true;
-//
-//	if (!AbilitySystem || !AbilitySystem->HasAttributeSetForAttribute(Attribute))
-//	{
-//		bSuccessfullyFoundAttribute = false;
-//		return 0.f;
-//	}
-//
-//	const float Result = AbilitySystem->GetNumericAttribute(Attribute);
-//	return Result;
-//}
-
-//float AGSCharacterBase::GetFloatAttributeBase(const AActor* Actor, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute)
-//{
-//	const UAbilitySystemComponent* const AbilitySystem = UAbilitySystemGlobals::GetAbilitySystemComponentFromActor(Actor);
-//	return GetFloatAttributeBaseFromAbilitySystemComponent(AbilitySystem, Attribute, bSuccessfullyFoundAttribute);
-//}
-
-//float ADilemmaCharacterBase::GetFloatAttributeBaseFromAbilitySystemComponent(const UAbilitySystemComponent* AbilitySystemComponent, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute)
-//{
-//	float Result = 0.f;
-//	bSuccessfullyFoundAttribute = false;
-//
-//	if (AbilitySystemComponent && AbilitySystemComponent->HasAttributeSetForAttribute(Attribute))
-//	{
-//		bSuccessfullyFoundAttribute = true;
-//		bool bIsSystemAttribute = Attribute.IsSystemAttribute();
-//		Result = AbilitySystemComponent->GetNumericAttributeBase(Attribute);
-//	}
-//
-//	return Result;
-//}
