@@ -14,5 +14,8 @@ UCLASS()
 class RPGDILEMMA_API UGSGameplayAbility : public UGameplayAbility
 {
 	GENERATED_BODY()
+
+public:
+	
 	
 };
