@@ -6,22 +6,22 @@
 
 ADelimmaPlayerState::ADelimmaPlayerState()
 {
-	AbilitySystemComponent = CreateDefaultSubobject<UGSAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
-	AbilitySystemComponent->SetIsReplicated(true);
+	//AbilitySystemComponent = CreateDefaultSubobject<UGSAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
+	//AbilitySystemComponent->SetIsReplicated(true);
 
-	DilemmaAttributeSet = CreateDefaultSubobject<UDilemmaAttributeSet>(TEXT("AttributeSetBase"));
+	//DilemmaAttributeSet = CreateDefaultSubobject<UDilemmaAttributeSet>(TEXT("AttributeSetBase"));
 	
 }
 
-UAbilitySystemComponent* ADelimmaPlayerState::GetAbilitySystemComponent() const
-{
-	return AbilitySystemComponent;
-}
-
-UDilemmaAttributeSet* ADelimmaPlayerState::GetAttributeSetBase() const
-{
-	return DilemmaAttributeSet;
-}
+//UAbilitySystemComponent* ADelimmaPlayerState::GetAbilitySystemComponent() const
+//{
+//	return AbilitySystemComponent;
+//}
+//
+//UDilemmaAttributeSet* ADelimmaPlayerState::GetAttributeSetBase() const
+//{
+//	return DilemmaAttributeSet;
+//}
 
 //void ADelimmaPlayerState::K2_InitAbilityActorInfo(AActor* InOwner, AActor* InAvatar)
 //{

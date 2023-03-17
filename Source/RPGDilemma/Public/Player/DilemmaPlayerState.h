@@ -12,28 +12,28 @@
  * 
  */
 UCLASS()
-class RPGDILEMMA_API ADelimmaPlayerState : public APlayerState, public IAbilitySystemInterface
+class RPGDILEMMA_API ADelimmaPlayerState : public APlayerState //, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 public:
 	ADelimmaPlayerState();
 
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	//virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
-	class UDilemmaAttributeSet* GetAttributeSetBase() const;
+	//class UDilemmaAttributeSet* GetAttributeSetBase() const;
 
 protected:
 
 	//UFUNCTION(BlueprintCallable)
 	//void K2_InitAbilityActorInfo(AActor* InOwner, AActor* InAvatar);
 
-protected:
-
-	UPROPERTY()
-	class UGSAbilitySystemComponent* AbilitySystemComponent;
-
-	UPROPERTY()
-	class UDilemmaAttributeSet* DilemmaAttributeSet;
+//protected:
+//
+//	UPROPERTY()
+//	class UGSAbilitySystemComponent* AbilitySystemComponent;
+//
+//	UPROPERTY()
+//	class UDilemmaAttributeSet* DilemmaAttributeSet;
 
 
 	

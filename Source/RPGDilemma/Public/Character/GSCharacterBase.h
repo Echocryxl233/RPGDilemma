@@ -11,15 +11,18 @@
 #include "GSCharacterBase.generated.h"
 
 UCLASS()
-class RPGDILEMMA_API AGSCharacterBase : public ACharacter, public IAbilitySystemInterface
+class RPGDILEMMA_API ADilemmaCharacterBase : public ACharacter, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this character's properties
-	AGSCharacterBase();
+	ADilemmaCharacterBase();
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+
+protected:
+	virtual void PossessedBy(AController* NewController) override;
 
 protected:
 	// Called when the game starts or when spawned
@@ -36,16 +39,16 @@ public:
 	//static float GetFloatAttribute(const AActor* Actor, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute);
 
 	/** Returns the value of Attribute from the ability system component AbilitySystem. */
-	UFUNCTION(BlueprintCallable, Category = "Dilemma|Attribute")
-	static float GetFloatAttributeFromAbilitySystemComponent(const UAbilitySystemComponent* AbilitySystem, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute);
+	//UFUNCTION(BlueprintCallable, Category = "Dilemma|Attribute")
+	//static float GetFloatAttributeFromAbilitySystemComponent(const UAbilitySystemComponent* AbilitySystem, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute);
 
 	/** Returns the base value of Attribute from the ability system component belonging to Actor. */
 	//UFUNCTION(BlueprintPure, Category = "Ability|Attribute")
 	//static float GetFloatAttributeBase(const AActor* Actor, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute);
 
 	/** Returns the base value of Attribute from the ability system component AbilitySystemComponent. */
-	UFUNCTION(BlueprintCallable, Category = "Dilemma|Attribute")
-	static float GetFloatAttributeBaseFromAbilitySystemComponent(const UAbilitySystemComponent* AbilitySystemComponent, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute);
+	//UFUNCTION(BlueprintCallable, Category = "Dilemma|Attribute")
+	//static float GetFloatAttributeBaseFromAbilitySystemComponent(const UAbilitySystemComponent* AbilitySystemComponent, FGameplayAttribute Attribute, bool& bSuccessfullyFoundAttribute);
 
 	
 
@@ -69,14 +72,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Dilemma|Abilities")
 	TSubclassOf<class UGameplayEffect> DefaultAttributes;
 
-private:
-	/** Camera boom positioning the camera behind the character */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class USpringArmComponent* CameraBoom;
 
-	/** Follow camera */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* FollowCamera;
 
 public:
 
@@ -85,10 +81,6 @@ public:
 	float TurnRateGamepad;
 
 
-public:
-	/** Returns CameraBoom subobject **/
-	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-	/** Returns FollowCamera subobject **/
-	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
 
 };

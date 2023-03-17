@@ -3,7 +3,7 @@
 
 #include "Ability/URPGTargetType.h"
 
-void URPGTargetType::GetTargets_Implementation(AGSCharacterBase* TargetingCharacter, AActor* TargetingActor, 
+void URPGTargetType::GetTargets_Implementation(ADilemmaCharacterBase* TargetingCharacter, AActor* TargetingActor, 
 		FGameplayEventData EventData, TArray<FHitResult>& OutHitResults, TArray<AActor*>& OutActors) const
 {
 	return;

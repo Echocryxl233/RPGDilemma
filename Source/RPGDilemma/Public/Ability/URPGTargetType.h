@@ -7,7 +7,7 @@
 #include "Abilities/GameplayAbilityTypes.h"
 #include "URPGTargetType.generated.h"
 
-class AGSCharacterBase;
+class ADilemmaCharacterBase;
 class AActor;
 struct FGameplayEventData;
 
@@ -25,7 +25,7 @@ public:
 
 	/** Called to determine targets to apply gameplay effects to */
 	UFUNCTION(BlueprintNativeEvent)
-	void GetTargets(AGSCharacterBase* TargetingCharacter, AActor* TargetingActor, FGameplayEventData EventData, TArray<FHitResult>& OutHitResults, TArray<AActor*>& OutActors) const;
+	void GetTargets(ADilemmaCharacterBase* TargetingCharacter, AActor* TargetingActor, FGameplayEventData EventData, TArray<FHitResult>& OutHitResults, TArray<AActor*>& OutActors) const;
 
 
 	
