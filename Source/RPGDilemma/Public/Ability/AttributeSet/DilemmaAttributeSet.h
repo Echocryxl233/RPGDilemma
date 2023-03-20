@@ -31,5 +31,13 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite);
 	FGameplayAttributeData MaxHealth;
 	ATTRIBUTE_ACCESSORS(UDilemmaAttributeSet, MaxHealth);
-	
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite);
+	FGameplayAttributeData MoveSpeed;
+	ATTRIBUTE_ACCESSORS(UDilemmaAttributeSet, MoveSpeed);
+
+
+	//virtual void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
+
+	//virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
 };

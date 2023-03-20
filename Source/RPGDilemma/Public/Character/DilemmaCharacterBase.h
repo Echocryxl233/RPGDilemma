@@ -37,6 +37,10 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Dilemma|Command")
 	void OnCommandConsume(ECommandType Key);
 
+	void OnMoveSpeedAttributeChanged(const FOnAttributeChangeData& Data);
+
+
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

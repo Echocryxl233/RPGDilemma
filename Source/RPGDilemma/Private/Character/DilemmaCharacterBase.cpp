@@ -4,6 +4,7 @@
 #include "Character/DilemmaCharacterBase.h"
 #include "Component/CommandComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 
 //#include "AbilitySystemGlobals.h"
@@ -52,7 +53,19 @@ void ADilemmaCharacterBase::BeginPlay()
 	{
 		CommandComponent->OnCommandConsume.AddUObject(this, &ADilemmaCharacterBase::OnCommandConsume);
 	}
+
+	if (IsValid(AbilitySystemComponent))
+	{
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(UDilemmaAttributeSet::GetMoveSpeedAttribute())
+				.AddUObject(this, &ADilemmaCharacterBase::OnMoveSpeedAttributeChanged);
+	}
 	
+}
+
+void ADilemmaCharacterBase::OnMoveSpeedAttributeChanged(const FOnAttributeChangeData& Data)
+{
+	UCharacterMovementComponent* MovementComponent = Cast<UCharacterMovementComponent>(GetCharacterMovement());
+	MovementComponent->MaxWalkSpeed = Data.NewValue;
 }
 
 // Called every frame
