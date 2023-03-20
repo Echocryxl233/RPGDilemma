@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Character/GSCharacterBase.h"
-
+#include "Character/DilemmaCharacterBase.h"
+#include "Component/CommandComponent.h"
 #include "Components/CapsuleComponent.h"
 
 
@@ -25,6 +25,9 @@ ADilemmaCharacterBase::ADilemmaCharacterBase()
 	AbilitySystemComponent->SetIsReplicated(true);
 
 	AttributeSetBase = CreateDefaultSubobject<UDilemmaAttributeSet>(TEXT("AttributeSetBase"));
+
+	CommandComponent = CreateDefaultSubobject<UCommandComponent>(TEXT("CommandComponent"));
+	
 }
 
 void ADilemmaCharacterBase::PossessedBy(AController* NewController)
@@ -45,7 +48,11 @@ void ADilemmaCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//AddGameplayAbilities();
+	if (IsValid(CommandComponent))
+	{
+		CommandComponent->OnCommandConsume.AddUObject(this, &ADilemmaCharacterBase::OnCommandConsume);
+	}
+	
 }
 
 // Called every frame

@@ -27,13 +27,6 @@ public:
 
 	virtual void Activate() override;
 
-	//UFUNCTION(BlueprintCallable, Category = "Ability|Tasks", meta = (HidePin = "OwningAbility", DefaultToSelf = "OwningAbility", BlueprintInternalUseOnly = "TRUE"))
-	//static UAT_AttributeChange* ListenForAttributeChange(
-	//		UGameplayAbility* OwningAbility, 
-	//		bool TriggerOnce,
-	//		UAbilitySystemComponent* SystemComponent,
-	//		FGameplayAttribute Attribute);
-
 	UFUNCTION(BlueprintCallable, Category = "Ability|Tasks", meta = (HidePin = "OwningAbility", DefaultToSelf = "OwningAbility", BlueprintInternalUseOnly = "TRUE"))
 	static UAT_AttributeChange* ListenForAttributeChange(
 			UGameplayAbility* OwningAbility,

@@ -3,3 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
+UENUM(BlueprintType)
+enum class ECommandType : uint8
+{
+	None,
+	LightAttack,
+	HavyAttack,
+	SpecialAttack
+};
+

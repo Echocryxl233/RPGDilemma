@@ -32,19 +32,6 @@ UAT_AttributeChange* UAT_AttributeChange::ListenForAttributeChange(
     return TaskObj;
 }
 
-//UAT_AttributeChange* UAT_AttributeChange::ListenForAttributeChange(
-//        UGameplayAbility* OwningAbility,
-//        bool TriggerOnce,
-//        UAbilitySystemComponent* SystemComponent,
-//        FGameplayAttribute Attribute)
-//{
-//    UAT_AttributeChange* MyObj = NewAbilityTask<UAT_AttributeChange>(OwningAbility);
-//    MyObj->TriggerOnce = TriggerOnce;
-//    MyObj->AbilitySystemComponent = SystemComponent;
-//    MyObj->Attribute = Attribute;
-//
-//    return MyObj;
-//}
 
 void UAT_AttributeChange::Activate()
 {

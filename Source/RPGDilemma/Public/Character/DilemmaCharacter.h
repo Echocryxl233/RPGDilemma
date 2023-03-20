@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Character/GSCharacterBase.h"
+#include "Character/DilemmaCharacterBase.h"
 #include "DilemmaCharacter.generated.h"
 
 /**

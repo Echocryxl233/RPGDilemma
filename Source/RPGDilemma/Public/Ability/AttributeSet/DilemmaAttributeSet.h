@@ -24,14 +24,6 @@ class RPGDILEMMA_API UDilemmaAttributeSet : public UAttributeSet
 
 public:
 
-	//UPROPERTY(BlueprintReadOnly, Category = "Health", ReplicatedUsing = OnRep_Health)
-	//FGameplayAttributeData Health;
-	//ATTRIBUTE_ACCESSORS(UGSAttributeSetBase, Health)
-
-	//UPROPERTY(BlueprintReadOnly, Category = "Health", ReplicatedUsing = OnRep_MaxHealth)
-	//FGameplayAttributeData MaxHealth;
-	//ATTRIBUTE_ACCESSORS(UGSAttributeSetBase, MaxHealth)
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite);
 	FGameplayAttributeData Health;
 	ATTRIBUTE_ACCESSORS(UDilemmaAttributeSet, Health);

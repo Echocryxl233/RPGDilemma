@@ -3,12 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "../../RPGDilemma.h"
 #include "AbilitySystemInterface.h"
 #include "Ability/GSAbilitySystemComponent.h"
 #include "Ability/GSGameplayAbility.h"
 #include "Ability/AttributeSet/DilemmaAttributeSet.h"
 #include "GameFramework/Character.h"
-#include "GSCharacterBase.generated.h"
+#include "DilemmaCharacterBase.generated.h"
 
 UCLASS()
 class RPGDILEMMA_API ADilemmaCharacterBase : public ACharacter, public IAbilitySystemInterface
@@ -32,6 +33,10 @@ protected:
 
 	virtual void InitDefaultAttributes();
 
+protected:
+	UFUNCTION(BlueprintImplementableEvent, Category = "Dilemma|Command")
+	void OnCommandConsume(ECommandType Key);
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -52,7 +57,9 @@ protected:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Dilemma|Abilities")
 	TSubclassOf<class UGameplayEffect> DefaultAttributes;
 
-
+protected:
+	UPROPERTY(BlueprintReadOnly, EditAnywhere)
+	class UCommandComponent* CommandComponent;
 
 public:
 
